@@ -1,0 +1,51 @@
+<html>
+<head>
+    <style>
+        .sign-up {
+            width: 200px;
+            padding: 10%;
+            border: 3px solid #fff;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(62, 147, 173);">
+    <div class="sign-up">
+        <div align="center">
+            <b>LOGIN</b><br><br><br>
+        </div>
+        
+        <div align="center">
+            <form onsubmit="return validateForm()">
+                Username<br><input type="text" id="username" placeholder="username" required><br><br>
+                Password<br><input type="password" id="password" placeholder="password" required><br><br>
+                <a href="forgotpassword.html">Forgot Password?</a>
+                <a href="register.html">Sign up</a>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            if (username === "" || password === "") {
+                alert("Username and password are required");
+                return false;
+            }
+    
+            // Check if the password meets the constraint (at least 8 characters)
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false;
+            }
+    
+            // Additional validation logic can be added here
+    
+            return true;
+        }
+    </script>  
+</body>
+</html>
